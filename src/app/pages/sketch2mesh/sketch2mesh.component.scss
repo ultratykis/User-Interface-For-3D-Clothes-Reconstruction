@@ -1,0 +1,130 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+.interface-header h1 {
+    font-size: 2.5em;
+    text-align: center;
+    padding-top: 0.2em;
+    // background-color: #477d92;
+}
+
+.interface-header h2 {
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 0.2em;
+    color: darkgrey;
+    // background-color: #477d92;
+}
+
+.interface-container {
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    // height: 90%;
+
+    mat-grid-tile {
+        padding-top: 0;
+        height: 50%;
+        overflow: visible;
+        .sketch-pad-card {
+            // display: inline-block;
+            // flex-direction: column;
+            // align-items: center;
+            // justify-content: center;
+            // width: 90%;
+            // height: 90%;
+
+            mat-card-content {
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+            }
+        }
+
+        .process-res-card {
+            mat-card-title {
+                .style_selector {
+                    color: darkgrey;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    mat-radio-button {
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }
+                }
+            }
+
+            .info-text {
+                text-align: center;
+                font-size: 1.3em;
+                padding-top: 0.5em;
+                padding-bottom: 0.5em;
+            }
+
+            mat-card-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .model-viewer-card {
+            // display: flow;
+            // flex-direction: row-reverse;
+            // align-items: center;
+            // justify-content: center;
+            // width: 90%;
+            // height: 90%;
+            mat-card-title {
+                .style_selector {
+                    color: darkgrey;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    mat-radio-button {
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }
+                }
+            }
+
+            .info-text {
+                text-align: center;
+                font-size: 1.3em;
+                padding-top: 0.5em;
+                padding-bottom: 0.5em;
+            }
+
+            mat-card-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                // width: 100%;
+                // margin-top: 30px;
+
+                .ripple-container {
+                    // cursor: pointer;
+                    text-align: center;
+
+                    // border-radius: 50%;
+
+                    user-select: none;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+
+                    -webkit-user-drag: none;
+                    -webkit-tap-highlight-color: transparent;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}

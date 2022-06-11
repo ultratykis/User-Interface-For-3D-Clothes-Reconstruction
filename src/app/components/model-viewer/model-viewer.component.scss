@@ -1,0 +1,12 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+.model-viewer-container {
+    display: flex;
+    flex-direction: column;
+    mat-card {
+        width: 100%;
+        display: inline-block;
+        padding: 2px;
+    }
+}
