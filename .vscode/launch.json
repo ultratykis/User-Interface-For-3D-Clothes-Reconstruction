@@ -3,11 +3,27 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Attach to Chrome",
+      "port": 9222,
+      "request": "attach",
+      "type": "chrome",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
       "name": "ng serve",
       "type": "pwa-chrome",
       "request": "launch",
       "preLaunchTask": "npm: start",
       "url": "http://localhost:4200/"
+    },
+    {
+      "name": "ng serve (attach)",
+      "type": "pwa-chrome",
+      "port": 9222,
+      "request": "attach",
+      "preLaunchTask": "npm: start",
+      "url": "http://localhost:4200/",
+      "webRoot": "${workspaceFolder}"
     },
     {
       "name": "ng test",

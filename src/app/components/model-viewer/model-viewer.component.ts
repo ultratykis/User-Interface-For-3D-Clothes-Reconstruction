@@ -8,7 +8,10 @@ import * as THREE from 'three';
 })
 export class ModelViewerComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+  ) { 
+
+  }
 
   ngOnInit(): void {
   }
