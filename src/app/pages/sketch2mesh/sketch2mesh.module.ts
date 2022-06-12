@@ -7,12 +7,12 @@ import { Sketch2meshRoutingModule } from './sketch2mesh-routing.module';
 import { AngularMaterialModule } from '../../angular-material.module';
 
 // import three.js modules.
-import { NgtCanvasModule } from '@angular-three/core';
+import { ThreeModule } from '../../three.module';
 
 // import sketch2mesh components.
 import { SketchPadComponent } from '../../components/sketch-pad/sketch-pad.component';
 import { ModelViewerComponent } from '../../components/model-viewer/model-viewer.component';
-import { GenerationProcessComponent } from '../../components/generation-process/generation-process.component';
+import { MeshComponent } from '../../components/mesh/mesh.component';
 
 
 @NgModule({
@@ -20,13 +20,13 @@ import { GenerationProcessComponent } from '../../components/generation-process/
     SketchPadComponent,
     ModelViewerComponent,
     Sketch2meshComponent,
-    GenerationProcessComponent
+    MeshComponent
   ],
   imports: [
     CommonModule,
     AngularMaterialModule,
-    Sketch2meshRoutingModule,
-    NgtCanvasModule
+    ThreeModule,
+    Sketch2meshRoutingModule
   ]
 })
 export class Sketch2meshModule { }

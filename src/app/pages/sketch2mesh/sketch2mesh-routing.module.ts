@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 // import components
 import { Sketch2meshComponent } from './sketch2mesh.component';
+import { InstructionComponent } from '../instruction/instruction.component';
 
 const Sketch2meshRoutes: Routes = [
   {

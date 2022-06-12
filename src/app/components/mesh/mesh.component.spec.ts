@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GenerationProcessComponent } from './generation-process.component';
+import { MeshComponent } from './mesh.component';
 
-describe('GenerationProcessComponent', () => {
-  let component: GenerationProcessComponent;
-  let fixture: ComponentFixture<GenerationProcessComponent>;
+describe('MeshComponent', () => {
+  let component: MeshComponent;
+  let fixture: ComponentFixture<MeshComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GenerationProcessComponent ]
+      declarations: [ MeshComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GenerationProcessComponent);
+    fixture = TestBed.createComponent(MeshComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

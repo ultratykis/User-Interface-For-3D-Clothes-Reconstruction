@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import * as THREE from 'three';
 
 @Component({
   selector: 'app-model-viewer',
@@ -9,9 +8,7 @@ import * as THREE from 'three';
 export class ModelViewerComponent implements OnInit {
 
   constructor(
-  ) { 
-
-  }
+  ) { }
 
   ngOnInit(): void {
   }

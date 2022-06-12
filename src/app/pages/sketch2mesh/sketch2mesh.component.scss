@@ -21,109 +21,32 @@
     align-items: center;
     justify-content: center;
     width: 90%;
-    // height: 90%;
 
     mat-grid-tile {
         padding-top: 0;
         height: 50%;
         overflow: visible;
-        .sketch-pad-card {
-            // display: inline-block;
-            // flex-direction: column;
-            // align-items: center;
-            // justify-content: center;
-            // width: 90%;
-            // height: 90%;
+        .workspace-card {
+            
+            .button-row {
+                margin: 8px 0px 8px 8px;
+                .flex-container {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    .button-container {
+                        display: flex;
+                        justify-content: center;
+                        // width: 12px;
+                    }
+                }
+            }
 
             mat-card-content {
                 flex-direction: row;
                 align-items: center;
                 justify-content: center;
                 width: 100%;
-            }
-        }
-
-        .process-res-card {
-            mat-card-title {
-                .style_selector {
-                    color: darkgrey;
-                    padding-left: 10px;
-                    padding-right: 10px;
-                    mat-radio-button {
-                        padding-left: 10px;
-                        padding-right: 10px;
-                    }
-                }
-            }
-
-            .info-text {
-                text-align: center;
-                font-size: 1.3em;
-                padding-top: 0.5em;
-                padding-bottom: 0.5em;
-            }
-
-            mat-card-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            }
-        }
-
-        .model-viewer-card {
-            // display: flow;
-            // flex-direction: row-reverse;
-            // align-items: center;
-            // justify-content: center;
-            // width: 90%;
-            // height: 90%;
-            mat-card-title {
-                .style_selector {
-                    color: darkgrey;
-                    padding-left: 10px;
-                    padding-right: 10px;
-                    mat-radio-button {
-                        padding-left: 10px;
-                        padding-right: 10px;
-                    }
-                }
-            }
-
-            .info-text {
-                text-align: center;
-                font-size: 1.3em;
-                padding-top: 0.5em;
-                padding-bottom: 0.5em;
-            }
-
-            mat-card-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                // width: 100%;
-                // margin-top: 30px;
-
-                .ripple-container {
-                    // cursor: pointer;
-                    text-align: center;
-
-                    // border-radius: 50%;
-
-                    user-select: none;
-                    -webkit-user-select: none;
-                    -moz-user-select: none;
-
-                    -webkit-user-drag: none;
-                    -webkit-tap-highlight-color: transparent;
-
-                    img {
-                        height: 100%;
-                        width: 100%;
-                        margin: 0;
-                    }
-                }
             }
         }
     }

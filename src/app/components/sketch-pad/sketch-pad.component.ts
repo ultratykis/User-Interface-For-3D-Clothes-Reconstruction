@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import Konva from 'konva';
 
 @Component({
@@ -6,12 +6,12 @@ import Konva from 'konva';
   templateUrl: './sketch-pad.component.html',
   styleUrls: ['./sketch-pad.component.scss']
 })
-// export class SketchPadComponent implements OnInit {
+
 export class SketchPadComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     let stage: Konva.Stage = new Konva.Stage({
       container: 'sketch-pad-container',
       width: 768,
@@ -30,7 +30,7 @@ export class SketchPadComponent implements OnInit {
       // let pos: Konva.Node  = stage.getPointerPosition();
       let pos: any = stage.getPointerPosition();
       last_line = new Konva.Line({
-        stroke: '#df4b26',
+        stroke: '#000',
         strokeWidth: 5,
         globalCompositeOperation:
           mode === 'brush' ? 'source-over' : 'destination-out',
@@ -51,13 +51,14 @@ export class SketchPadComponent implements OnInit {
       if (!is_painting) {
         return;
       }
-      
+
       // prevent scrolling on touch devices
       e.evt.preventDefault();
 
       const pos: any = stage.getPointerPosition();
       let new_points: any = last_line.points().concat([pos.x, pos.y]); // need to get the type to replace the any
       last_line.points(new_points);
-    });}
+    });
+  }
 
 }

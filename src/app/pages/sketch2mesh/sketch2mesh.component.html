@@ -3,34 +3,96 @@
     <h2>Proposed user interface for real-time 3D model generation and editing from hand-drawing sketch.</h2>
 </div>
 <div class="interface-container">
-    <mat-grid-list cols="7" rowHeight="1:2">
-        <mat-grid-tile [colspan]="3" >
-            <mat-card class="sketch-pad-card" fxLayout="column" fxFlexFill>
+    <mat-grid-list cols="6" rowHeight="1:2">
+        <mat-grid-tile [colspan]="3">
+            <mat-card class="workspace-card" fxLayout="column" fxFlexFill>
                 <mat-card-header fxFlex="10">
-                    <mat-card-title>Sketch Pad</mat-card-title>
-                    <mat-card-subtitle>
-                        <span>You can draw your sketch here.</span>
-                        <!-- TODO: brush, eraser, clear, save -->
-                    </mat-card-subtitle>
+                    <div>
+                        <mat-card-title>Sketch Pad</mat-card-title>
+                        <mat-card-subtitle>
+                            <span>You can draw your sketch here.</span>
+                            <!-- TODO: brush, eraser, clear, save -->
+                        </mat-card-subtitle>
+                    </div>
+                    <div class="button-row">
+                        <div class="flex-container">
+                            <div class="button-container">
+                                <button mat-button color="accent">
+                                    <mat-icon>brush</mat-icon>
+                                </button>
+                            </div>
+                            <div class="button-container">
+                                <button mat-button color="basic">
+                                    <mat-icon>drive_file_rename_outline</mat-icon>
+                                </button>
+                            </div>
+                            <div class="button-container">
+                                <button mat-button color="basic">
+                                    <mat-icon>close</mat-icon>
+                                </button>
+                            </div>
+                            <div class="button-container">
+                                <button mat-button disabled>
+                                </button>
+                            </div>
+                            <div class="button-container">
+                                <button mat-button color="basic">
+                                    <mat-icon>save</mat-icon>
+                                </button>
+                            </div>
+                            <div class="button-container">
+                                <button mat-button color="basic">
+                                    <mat-icon>arrow_circle_left</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </mat-card-header>
                 <mat-card-content fxFlex="90">
                     <app-sketch-pad></app-sketch-pad>
                 </mat-card-content>
             </mat-card>
         </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" rowHeight="1:2">
-            <mat-card class="process-res-card" fxLayout="column" fxFlexFill>
-                <mat-card-content fxFlex="100">
-                    <app-generation-process></app-generation-process>
-                </mat-card-content>
-            </mat-card>
-        </mat-grid-tile><mat-grid-tile [colspan]="3">
-            <mat-card class="sketch-pad-card" fxLayout="column" fxFlexFill>
+        <mat-grid-tile [colspan]="3">
+            <mat-card class="workspace-card" fxLayout="column" fxFlexFill>
                 <mat-card-header fxFlex="10">
-                    <mat-card-title>Model Viewer</mat-card-title>
-                    <mat-card-subtitle>
-                        <span>The generated model will be shown here.</span>
-                    </mat-card-subtitle>
+                    <div>
+                        <mat-card-title>Model Viewer</mat-card-title>
+                        <mat-card-subtitle>
+                            <span>Check generated model here.</span>
+                        </mat-card-subtitle>
+                    </div>
+                    <div class="button-row">
+                        <div class="flex-container">
+                            <div class="button-container">
+                                <button mat-button disabled>
+                                </button>
+                            </div>
+                            <div class="button-container">
+                                <button mat-button disabled>
+                                </button>
+                            </div>
+                            <div class="button-container">
+                                <button mat-button disabled>
+                                </button>
+                            </div>
+                            <div class="button-container">
+                                <button mat-button color="basic">
+                                    <mat-icon>autorenew</mat-icon>
+                                </button>
+                            </div>
+                            <div class="button-container">
+                                <button mat-button color="basic">
+                                    <mat-icon>file_upload</mat-icon>
+                                </button>
+                            </div>
+                            <div class="button-container">
+                                <button mat-button color="basic">
+                                    <mat-icon>download</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </mat-card-header>
                 <mat-card-content fxFlex="90">
                     <app-model-viewer></app-model-viewer>
