@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+// import services
+import { IntermediationService } from '../../services/intermediation.service';
+
 @Component({
   selector: 'app-sketch2mesh',
   templateUrl: './sketch2mesh.component.html',
@@ -7,9 +10,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Sketch2meshComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private inter: IntermediationService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+
+  public onDraw(): void {
+    this.inter.painting_mode = 'brush';
+  }
+
+  public onErase(): void {
+    this.inter.painting_mode = 'erase';
+  }
+
+  public onClear(): void {
+  }
+
+  public onSave(): void {
+    this.inter.complete_drawing();
+  }
+
+  public onScreenshot(): void {
+    console.log('onScreenshot');
+  }
+
+  public onRenew(): void {
+    console.log('onRenew');
+  }
+
+  public onLoad(): void {
+    console.log('onLoad');
+  }
+
+  public onDownload(): void {
+    console.log('onDownload');
   }
 
 }

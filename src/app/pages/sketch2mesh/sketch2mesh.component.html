@@ -17,32 +17,30 @@
                     <div class="button-row">
                         <div class="flex-container">
                             <div class="button-container">
-                                <button mat-button color="accent">
+                                <button mat-button color="(basic)" (click)="onDraw()">
                                     <mat-icon>brush</mat-icon>
                                 </button>
                             </div>
                             <div class="button-container">
-                                <button mat-button color="basic">
+                                <button mat-button color="basic" (click)="onErase()">
                                     <mat-icon>drive_file_rename_outline</mat-icon>
                                 </button>
                             </div>
                             <div class="button-container">
-                                <button mat-button color="basic">
+                                <button mat-button color="basic" (click)="onClear()">
                                     <mat-icon>close</mat-icon>
                                 </button>
                             </div>
                             <div class="button-container">
                                 <button mat-button disabled>
                                 </button>
-                            </div>
-                            <div class="button-container">
-                                <button mat-button color="basic">
-                                    <mat-icon>save</mat-icon>
+                            </div><div class="button-container">
+                                <button mat-button disabled>
                                 </button>
                             </div>
                             <div class="button-container">
-                                <button mat-button color="basic">
-                                    <mat-icon>arrow_circle_left</mat-icon>
+                                <button mat-button color="basic" (click)="onSave()">
+                                    <mat-icon>save</mat-icon>
                                 </button>
                             </div>
                         </div>
@@ -73,21 +71,22 @@
                                 </button>
                             </div>
                             <div class="button-container">
-                                <button mat-button disabled>
+                                <button mat-button color="basic" (click)="onScreenshot()">
+                                    <mat-icon>arrow_circle_left</mat-icon>
                                 </button>
                             </div>
                             <div class="button-container">
-                                <button mat-button color="basic">
+                                <button mat-button color="basic" (click)="onRenew()">
                                     <mat-icon>autorenew</mat-icon>
                                 </button>
                             </div>
                             <div class="button-container">
-                                <button mat-button color="basic">
+                                <button mat-button color="basic" (click)="onLoad()">
                                     <mat-icon>file_upload</mat-icon>
                                 </button>
                             </div>
                             <div class="button-container">
-                                <button mat-button color="basic">
+                                <button mat-button color="basic" (click)="onDownload()">
                                     <mat-icon>download</mat-icon>
                                 </button>
                             </div>
