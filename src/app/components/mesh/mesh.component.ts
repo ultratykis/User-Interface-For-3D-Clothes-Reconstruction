@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { NgtRenderState } from '@angular-three/core';
-import { Mesh } from 'three';
-
+import { NgtRenderState, NgtLoader } from '@angular-three/core';
+import { Mesh, MeshNormalMaterial } from 'three';
 // import services
 import { IntermediationService } from 'src/app/services/intermediation.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-mesh',
@@ -11,21 +11,26 @@ import { IntermediationService } from 'src/app/services/intermediation.service';
   styleUrls: ['./mesh.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
+  
 export class MeshComponent implements OnInit {
-
-  constructor(private inter: IntermediationService) { }
-
-  ngOnInit(): void {
+  
+  public get model(): Mesh {
+    return this.inter.mesh;
   }
 
-  public loadObj(): void {
+  constructor(
+    private inter: IntermediationService
+  ) { 
+    // this.model$ = this.loadObj();
+  }
 
+  ngOnInit(): void {
   }
 
   private _hovered: boolean = false;
   private _active: boolean = false;
 
-  onCubeBeforeRender($event: { state: NgtRenderState; object: Mesh }) {
+  onBeforeRender($event: { state: NgtRenderState; object: Mesh }) {
     const cube = $event.object;
     // we are rotating our cube little by little before it gets rendered
     // cube.rotation.x += 0.01;

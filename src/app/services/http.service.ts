@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,17 +12,19 @@ export class HttpService {
     private httpClient: HttpClient
   ) { }
 
-  private readonly api_url: string = 'http://localhost:5000/';
+  private readonly api_url: string = 'http://150.65.59.82:4869/';
+  // private readonly api_url: string = 'http://127.0.0.1:5000/';
 
-  public post_sketch(data: string) {
-    return this.httpClient.post(this.api_url, data);
-  }
 
-  public post_stroke(data: string) {
-    return this.httpClient.post(this.api_url, data);
-  }
+  private httpOptions = {
+    // headers: new HttpHeaders().set('Content-Type','application/json'),
+    headers: new HttpHeaders({ 
+      'Access-Control-Allow-Origin':'*'
+    }).set('Content-Type','application/json')
+  };
 
-  public post_exsit_mesh(data: any) {
-    return this.httpClient.post(this.api_url, data);
+  public get_mesh(data: any) {
+    let url = this.api_url + 'get-mesh';
+    return this.httpClient.post(url, data, this.httpOptions);
   }
 }

@@ -11,6 +11,7 @@ import {
   NgtPointLightModule
 } from "@angular-three/core/lights";
 import { NgtSobaOrbitControlsModule } from "@angular-three/soba/controls";
+import { NgtPrimitiveModule } from '@angular-three/core/primitive';
 
 const ThreeModules = [
   NgtCanvasModule,
@@ -21,7 +22,8 @@ const ThreeModules = [
   NgtSpotLightModule,
   NgtPointLightModule,
   NgtMeshBasicMaterialModule,
-  NgtSobaOrbitControlsModule
+  NgtSobaOrbitControlsModule,
+  NgtPrimitiveModule
 ];
 
 @NgModule({

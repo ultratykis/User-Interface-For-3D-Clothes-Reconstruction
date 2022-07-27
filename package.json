@@ -26,6 +26,7 @@
     "@angular/router": "~13.3.9",
     "file-saver": "^2.0.5",
     "konva": "^8.3.9",
+    "obj2gltf": "^3.1.4",
     "rxjs": "~7.5.5",
     "three": "0.139.0",
     "tslib": "^2.4.0",

@@ -11,14 +11,14 @@
     },
     {
       "name": "ng serve",
-      "type": "pwa-chrome",
+      "type": "chrome",
       "request": "launch",
       "preLaunchTask": "npm: start",
       "url": "http://localhost:4200/"
     },
     {
       "name": "ng serve (attach)",
-      "type": "pwa-chrome",
+      "type": "chrome",
       "port": 9222,
       "request": "attach",
       "preLaunchTask": "npm: start",
