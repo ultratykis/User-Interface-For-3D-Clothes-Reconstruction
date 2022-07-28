@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { NgtRenderState, NgtLoader } from '@angular-three/core';
-import { Mesh, MeshNormalMaterial } from 'three';
-// import services
-import { IntermediationService } from 'src/app/services/intermediation.service';
+import { NgtRenderState } from '@angular-three/core';
+import { Mesh, MeshNormalMaterial, MeshNormalMaterialParameters, MeshPhongMaterialParameters, MeshStandardMaterialParameters } from 'three';
 import { Observable } from 'rxjs';
 
+// import services
+import { IntermediationService } from 'src/app/services/intermediation.service';
+import * as THREE from 'three';
 @Component({
   selector: 'app-mesh',
   templateUrl: './mesh.component.html',
@@ -15,14 +16,36 @@ import { Observable } from 'rxjs';
 export class MeshComponent implements OnInit {
   
   public get model(): Mesh {
-    return this.inter.mesh;
+    let mesh = this.inter.mesh;
+    let geometry = mesh.geometry;
+    geometry.computeVertexNormals();
+    return mesh;
+  }
+
+  public parameters_normal: MeshNormalMaterialParameters = {
+    flatShading: false
+  }
+
+  public parameters_phong: MeshPhongMaterialParameters = {
+    flatShading: false,
+    color: '#c8c8c8',
+    specular: '#000000',
+    shininess: 50,
+    reflectivity: 1.0,
+    opacity: 1.0,
+  }
+
+  public parameters_standard: MeshStandardMaterialParameters = {
+    flatShading: false,
+    color: '#2e2e2e',
+    roughness: 0,
+    metalness: 1.0,
+    emissive: '#000000'
   }
 
   constructor(
     private inter: IntermediationService
-  ) { 
-    // this.model$ = this.loadObj();
-  }
+  ) { }
 
   ngOnInit(): void {
   }
@@ -31,9 +54,7 @@ export class MeshComponent implements OnInit {
   private _active: boolean = false;
 
   onBeforeRender($event: { state: NgtRenderState; object: Mesh }) {
-    const cube = $event.object;
-    // we are rotating our cube little by little before it gets rendered
-    // cube.rotation.x += 0.01;
+    const model = $event.object;
   }
 
   public get hovered(): boolean {

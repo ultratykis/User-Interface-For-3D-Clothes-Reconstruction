@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import Konva from 'konva';
 // import services
 import { IntermediationService } from '../../services/intermediation.service';
 
@@ -27,6 +27,7 @@ export class Sketch2meshComponent implements OnInit {
   }
 
   public onClear(): void {
+    this.inter.initalize_sketch_pad()
   }
 
   public onSave(): void {
@@ -34,7 +35,7 @@ export class Sketch2meshComponent implements OnInit {
   }
 
   public onScreenshot(): void {
-    console.log('onScreenshot');
+    this.inter.get_rendered_sketch();
   }
 
   public onRenew(): void {

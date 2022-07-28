@@ -6,6 +6,18 @@ import { Sketch2meshRoutingModule } from './sketch2mesh-routing.module';
 // import angular material modules.
 import { AngularMaterialModule } from '../../angular-material.module';
 
+// import mesh materials from angular three
+import {
+  NgtMeshNormalMaterialModule,
+  NgtMeshStandardMaterialModule,
+  NgtMeshPhysicalMaterialModule,
+  NgtMeshLambertMaterialModule,
+  NgtMeshPhongMaterialModule,
+  NgtMeshToonMaterialModule,
+  NgtMeshBasicMaterialModule,
+  NgtMeshDepthMaterialModule,
+} from '@angular-three/core/materials';
+
 // import three.js modules.
 import { ThreeModule } from '../../three.module';
 
@@ -26,7 +38,15 @@ import { MeshComponent } from '../../components/mesh/mesh.component';
     CommonModule,
     AngularMaterialModule,
     ThreeModule,
-    Sketch2meshRoutingModule
+    Sketch2meshRoutingModule,
+    NgtMeshNormalMaterialModule,
+    NgtMeshStandardMaterialModule,
+    NgtMeshPhysicalMaterialModule,
+    NgtMeshLambertMaterialModule,
+    NgtMeshPhongMaterialModule,
+    NgtMeshToonMaterialModule,
+    NgtMeshBasicMaterialModule,
+    NgtMeshDepthMaterialModule,
   ]
 })
 export class Sketch2meshModule { }

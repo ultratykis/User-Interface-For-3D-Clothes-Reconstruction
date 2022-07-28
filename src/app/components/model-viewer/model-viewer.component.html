@@ -5,8 +5,8 @@
         <ngt-spot-light [position]="10" angle="0.15" penumbra="1"></ngt-spot-light>
         <ngt-point-light [position]="-10"></ngt-point-light>
         <!--mesh viewer-->
-        <app-mesh></app-mesh>
+        <app-mesh *ngIf="mesh_ready | async"></app-mesh>
         <!--taking control of the camera-->
-        <ngt-soba-orbit-controls></ngt-soba-orbit-controls>
+        <ngt-soba-orbit-controls (change)="get_camera($event)"></ngt-soba-orbit-controls>
     </ngt-canvas>
 </div>

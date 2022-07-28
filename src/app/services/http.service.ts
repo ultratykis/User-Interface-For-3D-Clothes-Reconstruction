@@ -27,4 +27,14 @@ export class HttpService {
     let url = this.api_url + 'get-mesh';
     return this.httpClient.post(url, data, this.httpOptions);
   }
+
+  public optimize_mesh(data: any) { 
+    let url = this.api_url + 'optimize-mesh';
+    return this.httpClient.post(url, data, this.httpOptions);
+  }
+
+  public get_rendered_sketch(data: any) {
+    let url = this.api_url + 'get-rendered-sketch';
+    return this.httpClient.post(url, data, this.httpOptions);
+  }
 }
