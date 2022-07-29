@@ -6,6 +6,6 @@ environment.prod.ts
 
 then run
 
-```
+```bash
 npm run build
 ```
