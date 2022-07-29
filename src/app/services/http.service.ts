@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +11,10 @@ export class HttpService {
     private httpClient: HttpClient
   ) { }
 
-  private readonly api_url: string = 'http://150.65.59.82:4869/';
-  // private readonly api_url: string = 'http://127.0.0.1:5000/';
+  private readonly api_url: string = environment.api_url + '/';
 
 
   private httpOptions = {
-    // headers: new HttpHeaders().set('Content-Type','application/json'),
     headers: new HttpHeaders({ 
       'Access-Control-Allow-Origin':'*'
     }).set('Content-Type','application/json')
