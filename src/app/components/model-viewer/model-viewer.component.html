@@ -7,6 +7,6 @@
         <!--mesh viewer-->
         <app-mesh *ngIf="mesh_ready | async"></app-mesh>
         <!--taking control of the camera-->
-        <ngt-soba-orbit-controls (change)="get_camera($event)"></ngt-soba-orbit-controls>
+        <ngt-soba-orbit-controls [maxDistance]="1" (change)="get_camera($event)"></ngt-soba-orbit-controls>
     </ngt-canvas>
 </div>
