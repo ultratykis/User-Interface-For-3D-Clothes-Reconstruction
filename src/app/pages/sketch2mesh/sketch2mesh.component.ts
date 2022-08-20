@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import Konva from 'konva';
 // import services
 import { IntermediationService } from '../../services/intermediation.service';

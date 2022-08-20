@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgtRenderState } from '@angular-three/core';
-import { Mesh } from 'three';
+import { Mesh, WebGLRenderer } from 'three';
 
 // import services
 import { IntermediationService } from 'src/app/services/intermediation.service';
@@ -12,12 +12,21 @@ import { IntermediationService } from 'src/app/services/intermediation.service';
 })
 export class ModelViewerComponent implements OnInit {
 
+  public renderer: any;
+
   constructor(
     private inter: IntermediationService
-  ) { }
+  ) { 
+  }
 
   ngOnInit(): void {
   }
+
+  public getCreated($event: any) {
+    console.log("mesh canvas get created.")
+    this.renderer = $event.gl;
+  }
+
 
   public get mesh_ready(): Promise<boolean> {
     return this.inter.mesh_ready;
@@ -27,12 +36,10 @@ export class ModelViewerComponent implements OnInit {
     let azimuthal = $event.target.getAzimuthalAngle();
     let polar = $event.target.getPolarAngle();
     let distance = $event.target.getDistance();
-    let snapshot = $event.target.domElement.toDataURL("image/png");
     this.inter.camera_position = {
       Azimuthal: azimuthal,
       Polar: polar,
       Distance: distance,
-      Snapshot: snapshot
     };
   }
 
