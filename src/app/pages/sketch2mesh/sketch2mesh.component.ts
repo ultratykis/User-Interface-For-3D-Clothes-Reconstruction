@@ -39,7 +39,8 @@ export class Sketch2meshComponent implements OnInit {
   }
 
   public onRenew(): void {
-    console.log('onRenew');
+    // console.log('onRenew');
+    this.inter.optimize_mesh();
   }
 
   public onLoad(): void {

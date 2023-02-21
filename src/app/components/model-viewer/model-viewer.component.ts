@@ -33,8 +33,8 @@ export class ModelViewerComponent implements OnInit {
   }
 
   public get_camera($event: any): void {
-    let azimuthal = $event.target.getAzimuthalAngle();
-    let polar = $event.target.getPolarAngle();
+    let azimuthal = this.inter.radToDeg($event.target.getAzimuthalAngle());
+    let polar = this.inter.radToDeg($event.target.getPolarAngle());
     let distance = $event.target.getDistance();
     this.inter.camera_position = {
       Azimuthal: azimuthal,
