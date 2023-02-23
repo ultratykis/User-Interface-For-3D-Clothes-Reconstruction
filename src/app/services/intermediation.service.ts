@@ -111,10 +111,10 @@ export class IntermediationService {
     let canvas = document.createElement('canvas');
     canvas.width = stage.width();
     canvas.height = stage.height();
-    let ctx = canvas.getContext("2d");
-    this.sketch_temp_obj.onload = function () {
-      ctx!.drawImage(self.sketch_temp_obj, 0, 0);
-    }
+    // let ctx = canvas.getContext("2d");
+    // this.sketch_temp_obj.onload = function () {
+    //   ctx!.drawImage(self.sketch_temp_obj, 0, 0);
+    // }
     // created canvas we can add to layer as "Konva.Image" element
     var image = new Konva.Image({
       image: canvas,
